@@ -1,0 +1,35 @@
+//
+//  AppContext.swift
+//  InjectionApp
+//
+//  Created by Chris Beaversen on 10/26/23.
+//
+
+import Foundation
+import UIKit
+
+protocol Dependency { 
+    var analytics: Analyticable { get }
+    var flagManager: any FlagManagable { get }
+}
+
+protocol AppDependency: Dependency {
+    func appCoordinator(navigationController: UINavigationController?) -> AppCoordinator
+    func landingCoordinator(navigationController: UINavigationController?) -> LandingCoordinator
+}
+
+final class AppContext: AppDependency {
+    let analytics: Analyticable = Analytics()
+    let flagManager: any FlagManagable = FlagManager()
+
+    func appCoordinator(navigationController: UINavigationController?) -> AppCoordinator {
+        AppCoordinator(context: self, navigationController: navigationController)
+    }
+
+    func landingCoordinator(navigationController: UINavigationController?) -> LandingCoordinator {
+        LandingCoordinator(
+            context: LandingContext(analytics: analytics, flagManager: flagManager),
+            navigationController: navigationController
+        )
+    }
+}

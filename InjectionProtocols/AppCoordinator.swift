@@ -11,29 +11,21 @@ import UIKit
 
 protocol Coordinator {
     var navigationController: UINavigationController? { get set }
+    var coordinators: [any Coordinator] { get }
     func setupCoordinator()
-}
-
-// Brainstorming around trying to fixup the navigation related
-// apis with confusion around presenting / pushing new coordinators
-extension Coordinator {
-    func presentCoordinator(coordinator: Coordinator) {
-        let newNav = UINavigationController()
-        navigationController?.present(newNav, animated: true)
-    }
 }
 
 final class AppCoordinator: Coordinator {
 
-    private let context: AppContext
+    private let context: any AppDependency
     weak var navigationController: UINavigationController?
 
     // This can be removed once we can handle this memory better
-    private var coordinators: [any Coordinator] = []
+    private(set) var coordinators: [any Coordinator] = []
 
     init(
-        context: AppContext,
-        navigationController: UINavigationController
+        context: any AppDependency,
+        navigationController: UINavigationController?
     ) {
         self.context = context
         self.navigationController = navigationController
