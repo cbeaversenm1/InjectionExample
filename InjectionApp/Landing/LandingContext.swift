@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class LandingContext<FlagManager: FlagManagable>: AppContext<FlagManager> {
+final class LandingContext: AppContext {
 
     func landingScreen(delegate: LandingDelegate) -> UIHostingController<LandingScreen> {
         UIHostingController(
@@ -18,7 +18,7 @@ final class LandingContext<FlagManager: FlagManagable>: AppContext<FlagManager> 
         )
     }
 
-    func transactionDetailsCoordinator<DataProvider: TransactionDetailsDataProvidable>(navigationController: UINavigationController?, dataProvider: DataProvider) -> TransactionsCoordinator<FlagManager, DataProvider> {
+    func transactionDetailsCoordinator(navigationController: UINavigationController?, dataProvider: any TransactionDetailsDataProvidable) -> TransactionsCoordinator {
         TransactionsCoordinator(
             context: TransactionsContext(
                 analytics: analytics,

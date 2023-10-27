@@ -10,16 +10,16 @@ import UIKit
 
 protocol Dependency { }
 
-open class AppContext<FlagManager: FlagManagable>: Dependency {
+open class AppContext: Dependency {
     let analytics: Analyticable
-    let flagManager: FlagManager
+    let flagManager: any FlagManagable
 
-    init(analytics: Analyticable, flagManager: FlagManager) {
+    init(analytics: Analyticable, flagManager: any FlagManagable) {
         self.analytics = analytics
         self.flagManager = flagManager
     }
 
-    func landingCoordinator(navigationController: UINavigationController?) -> LandingCoordinator<FlagManager> {
+    func landingCoordinator(navigationController: UINavigationController?) -> LandingCoordinator {
         LandingCoordinator(
             context: LandingContext(analytics: analytics, flagManager: flagManager),
             navigationController: navigationController

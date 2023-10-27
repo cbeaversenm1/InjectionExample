@@ -10,16 +10,16 @@ import SwiftUI
 
 // This makes this fall apart by having to include DataProvider at this level.
 // We won't be able to inject this unless we inject it all the way at the top in AppContext
-final class TransactionsContext<FlagManager: FlagManagable, DataProvider: TransactionDetailsDataProvidable>: AppContext<FlagManager> {
+final class TransactionsContext: AppContext {
 
-    let dataProvider: DataProvider
+    let dataProvider: any TransactionDetailsDataProvidable
 
-    required init(analytics: Analyticable, flagManager: FlagManager, dataProvider: DataProvider) {
+    required init(analytics: Analyticable, flagManager: any FlagManagable, dataProvider: any TransactionDetailsDataProvidable) {
         self.dataProvider = dataProvider
         super.init(analytics: analytics, flagManager: flagManager)
     }
 
-    func transactionDetailsScreen(delegate: TransactionDetailsDelegate) -> UIHostingController<TransactionDetailsScreen<FlagManager, DataProvider>> {
+    func transactionDetailsScreen(delegate: TransactionDetailsDelegate) -> UIHostingController<TransactionDetailsScreen> {
         UIHostingController(
             rootView: TransactionDetailsScreen(
                 viewModel: TransactionDetailsViewModel(

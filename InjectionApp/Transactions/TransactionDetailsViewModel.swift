@@ -9,19 +9,19 @@ import Foundation
 
 protocol TransactionDetailsDelegate: AnyObject { }
 
-final class TransactionDetailsViewModel<FlagManager: FlagManagable, DataProvider: TransactionDetailsDataProvidable> {
+final class TransactionDetailsViewModel {
 
     let analytics: Analyticable
-    let flagManager: FlagManager
+    let flagManager: any FlagManagable
     let transactionId: String
-    let dataProvider: DataProvider
+    let dataProvider: any TransactionDetailsDataProvidable
     weak var delegate: TransactionDetailsDelegate?
 
     init(
         analytics: Analyticable,
-        flagManager: FlagManager,
+        flagManager: any FlagManagable,
         transactionId: String,
-        dataProvider: DataProvider,
+        dataProvider: any TransactionDetailsDataProvidable,
         delegate: TransactionDetailsDelegate
     ) {
         self.analytics = analytics

@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-final class TransactionsCoordinator<FlagManager: FlagManagable, DataProvider: TransactionDetailsDataProvidable>: Coordinator {
+final class TransactionsCoordinator: Coordinator {
     var navigationController: UINavigationController?
 
-    let context: TransactionsContext<FlagManager, DataProvider>
+    let context: TransactionsContext
 
-    init(context: TransactionsContext<FlagManager, DataProvider>, navigationController: UINavigationController?) {
+    init(context: TransactionsContext, navigationController: UINavigationController?) {
         self.context = context
         self.navigationController = navigationController
     }

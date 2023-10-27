@@ -14,16 +14,16 @@ protocol Coordinator {
     func setupCoordinator()
 }
 
-final class AppCoordinator<FlagManager: FlagManagable>: Coordinator {
+final class AppCoordinator: Coordinator {
 
-    private let context: AppContext<FlagManager>
+    private let context: AppContext
     weak var navigationController: UINavigationController?
 
     // This can be removed once we can handle this memory better
     private var coordinators: [any Coordinator] = []
 
     init(
-        context: AppContext<FlagManager>,
+        context: AppContext,
         navigationController: UINavigationController
     ) {
         self.context = context

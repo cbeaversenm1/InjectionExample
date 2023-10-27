@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 import UIKit
 
-final class LandingCoordinator<FlagManager: FlagManagable>: Coordinator {
+final class LandingCoordinator: Coordinator {
     weak var navigationController: UINavigationController?
-    let context: LandingContext<FlagManager>
+    let context: LandingContext
     
     // This can be removed once we can handle this memory better
     private var coordinators: [any Coordinator] = []
 
-    init(context: LandingContext<FlagManager>, navigationController: UINavigationController? = nil) {
+    init(context: LandingContext, navigationController: UINavigationController? = nil) {
         self.context = context
         self.navigationController = navigationController
     }

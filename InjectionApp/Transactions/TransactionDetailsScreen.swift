@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct TransactionDetailsScreen<FlagManager: FlagManagable, DataProvider: TransactionDetailsDataProvidable>: View {
-    let viewModel: TransactionDetailsViewModel<FlagManager, DataProvider>
+struct TransactionDetailsScreen: View {
+    let viewModel: TransactionDetailsViewModel
 
     var body: some View {
         Text("Some transactions here")
