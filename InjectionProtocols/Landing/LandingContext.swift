@@ -8,23 +8,14 @@
 import Foundation
 import SwiftUI
 
-protocol LandingDependency: Dependency {
+protocol LandingContext: Dependency {
+    func landingCoordinator(navigationController: UINavigationController?) -> LandingCoordinator
     func landingScreen(delegate: LandingDelegate) -> UIHostingController<LandingScreen>
-    func transactionDetailsCoordinator(navigationController: UINavigationController?) -> TransactionsCoordinator
-    func transactionDetailsDataProvider() -> TransactionDetailsDataProvidable
-    func settingsCoordinator(navigationController: UINavigationController?) -> SettingsCoordinator
+    func transactionsContext() -> TransactionsContext
+    func settingsContext() -> SettingsContext
 }
 
-final class LandingContext: LandingDependency {
-
-    let analytics: Analyticable
-    let flagManager: any FlagManagable
-
-    init(analytics: Analyticable, flagManager: any FlagManagable) {
-        self.analytics = analytics
-        self.flagManager = flagManager
-    }
-    
+extension LandingContext {
     func landingCoordinator(navigationController: UINavigationController?) -> LandingCoordinator {
         LandingCoordinator(context: self, navigationController: navigationController)
     }
@@ -36,26 +27,28 @@ final class LandingContext: LandingDependency {
             )
         )
     }
+}
 
-    func transactionDetailsCoordinator(navigationController: UINavigationController?) -> TransactionsCoordinator {
-        TransactionsCoordinator(
-            context: TransactionsContext(
-                analytics: analytics,
-                flagManager: flagManager,
-                dataProvider: transactionDetailsDataProvider()
-            ),
-            navigationController: navigationController
+final class DefaultLandingContext: LandingContext {
+    let analytics: Analyticable
+    let flagManager: any FlagManagable
+
+    init(analytics: Analyticable, flagManager: any FlagManagable) {
+        self.analytics = analytics
+        self.flagManager = flagManager
+    }
+
+    func transactionsContext() -> TransactionsContext {
+        DefaultTransactionsContext(
+            analytics: analytics,
+            flagManager: flagManager
         )
     }
 
-    func transactionDetailsDataProvider() -> TransactionDetailsDataProvidable {
-        TransactionDetailsDataProvider()
-    }
-    
-    func settingsCoordinator(navigationController: UINavigationController?) -> SettingsCoordinator {
-        SettingsCoordinator(
-            context: SettingsContext(analytics: analytics, flagManager: flagManager),
-            navigationController: navigationController
+    func settingsContext() -> SettingsContext {
+        DefaultSettingsContext(
+            analytics: analytics,
+            flagManager: flagManager
         )
     }
 }

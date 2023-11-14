@@ -32,7 +32,10 @@ final class AppCoordinator: Coordinator {
     }
 
     func setupCoordinator() {
-        let landingCoordinator = context.landingCoordinator(navigationController: navigationController)
+        let landingCoordinator = context
+            .landingContext()
+            .landingCoordinator(navigationController: navigationController)
+
         coordinators.append(landingCoordinator)
         landingCoordinator.setupCoordinator()
     }

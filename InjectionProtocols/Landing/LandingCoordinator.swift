@@ -11,12 +11,12 @@ import UIKit
 
 final class LandingCoordinator: Coordinator {
     weak var navigationController: UINavigationController?
-    let context: LandingDependency
+    let context: LandingContext
 
     // This can be removed once we can handle this memory better
     private(set) var coordinators: [any Coordinator] = []
 
-    init(context: LandingDependency, navigationController: UINavigationController? = nil) {
+    init(context: LandingContext, navigationController: UINavigationController? = nil) {
         self.context = context
         self.navigationController = navigationController
     }
@@ -31,16 +31,17 @@ final class LandingCoordinator: Coordinator {
 
 extension LandingCoordinator: LandingDelegate {
     func seeTransactionDetails() {
-        let coordinator = context.transactionDetailsCoordinator(
-            navigationController: navigationController
-        )
+        let coordinator = context
+            .transactionsContext()
+            .transactionsCoordinator(navigationController: navigationController)
+
         coordinators.append(coordinator)
         coordinator.setupCoordinator()
     }
 
     func seeSettings() {
         let navigationController = UINavigationController()
-        let coordinator = context.settingsCoordinator(navigationController: navigationController)
+        let coordinator = context.settingsContext().settingsCoordinator(navigationController: navigationController)
         coordinators.append(coordinator)
         coordinator.setupCoordinator()
         self.navigationController?.present(coordinator.navigationController!, animated: true)

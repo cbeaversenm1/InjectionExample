@@ -8,22 +8,15 @@
 import Foundation
 import SwiftUI
 
-protocol TransactionsDependency: Dependency {
-    var dataProvider: any TransactionDetailsDataProvidable { get }
+protocol TransactionsContext: Dependency {
     func transactionDetailsScreen(delegate: TransactionDetailsDelegate) -> UIHostingController<TransactionDetailsScreen>
+
+    func transactionsCoordinator(navigationController: UINavigationController?) -> TransactionsCoordinator
+
+    func transactionDetailsDataProvider() -> TransactionDetailsDataProvidable
 }
 
-final class TransactionsContext: TransactionsDependency {
-    let analytics: Analyticable
-    let flagManager: any FlagManagable
-    let dataProvider: any TransactionDetailsDataProvidable
-
-    required init(analytics: Analyticable, flagManager: any FlagManagable, dataProvider: any TransactionDetailsDataProvidable) {
-        self.analytics = analytics
-        self.flagManager = flagManager
-        self.dataProvider = dataProvider
-    }
-
+extension TransactionsContext {
     func transactionDetailsScreen(delegate: TransactionDetailsDelegate) -> UIHostingController<TransactionDetailsScreen> {
         UIHostingController(
             rootView: TransactionDetailsScreen(
@@ -31,10 +24,35 @@ final class TransactionsContext: TransactionsDependency {
                     analytics: analytics,
                     flagManager: flagManager,
                     transactionId: "1",
-                    dataProvider: dataProvider,
+                    dataProvider: transactionDetailsDataProvider(),
                     delegate: delegate
                 )
             )
         )
+    }
+
+    func transactionsCoordinator(navigationController: UINavigationController?) -> TransactionsCoordinator {
+        TransactionsCoordinator(
+            context: self,
+            navigationController: navigationController
+        )
+    }
+}
+
+final class DefaultTransactionsContext: TransactionsContext {
+    let analytics: Analyticable
+    let flagManager: any FlagManagable
+
+    required init(
+        analytics: Analyticable,
+        flagManager: any FlagManagable
+    ) {
+        self.analytics = analytics
+        self.flagManager = flagManager
+    }
+
+
+    func transactionDetailsDataProvider() -> TransactionDetailsDataProvidable {
+        TransactionDetailsDataProvider()
     }
 }

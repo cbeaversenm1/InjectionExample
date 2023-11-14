@@ -15,21 +15,27 @@ protocol Dependency {
 
 protocol AppDependency: Dependency {
     func appCoordinator(navigationController: UINavigationController?) -> AppCoordinator
-    func landingCoordinator(navigationController: UINavigationController?) -> LandingCoordinator
+    func landingContext() -> LandingContext
+}
+
+extension AppDependency {
+    func appCoordinator(navigationController: UINavigationController?) -> AppCoordinator {
+        AppCoordinator(context: self, navigationController: navigationController)
+    }
 }
 
 final class AppContext: AppDependency {
     let analytics: Analyticable = Analytics()
     let flagManager: any FlagManagable = FlagManager()
 
-    func appCoordinator(navigationController: UINavigationController?) -> AppCoordinator {
-        AppCoordinator(context: self, navigationController: navigationController)
-    }
-
     func landingCoordinator(navigationController: UINavigationController?) -> LandingCoordinator {
         LandingCoordinator(
-            context: LandingContext(analytics: analytics, flagManager: flagManager),
+            context: landingContext(),
             navigationController: navigationController
         )
+    }
+
+    func landingContext() -> LandingContext {
+        DefaultLandingContext(analytics: analytics, flagManager: flagManager)
     }
 }
