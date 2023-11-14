@@ -31,9 +31,8 @@ final class LandingCoordinator: Coordinator {
 
 extension LandingCoordinator: LandingDelegate {
     func seeTransactionDetails() {
-        let coordinator = context.transactionDetailsCoordinator(
-            navigationController: navigationController,
-            dataProvider: TransactionDetailsDataProvider()
+        let coordinator = context.transactionsContext().transactionsCoordinator(
+            navigationController: navigationController
         )
         coordinators.append(coordinator)
         coordinator.setupCoordinator()

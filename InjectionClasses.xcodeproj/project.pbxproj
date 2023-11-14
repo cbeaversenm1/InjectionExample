@@ -24,7 +24,22 @@
 		02978B0F2AEAD7F50055A60B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02978B0D2AEAD7F50055A60B /* LaunchScreen.storyboard */; };
 		02978B172AEAD8460055A60B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02978B162AEAD8460055A60B /* AppCoordinator.swift */; };
 		02978B192AEAE1FD0055A60B /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02978B182AEAE1FD0055A60B /* AppContext.swift */; };
+		3B1C66CD2B03BDFA00CC7A82 /* InjectionClassesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C66CC2B03BDFA00CC7A82 /* InjectionClassesTests.swift */; };
+		3BDCC4F62B03C00000FBBB20 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C66D62B03BFBC00CC7A82 /* SettingsCoordinator.swift */; };
+		3BDCC4F92B03C00500FBBB20 /* SettingsContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C66D42B03BFB200CC7A82 /* SettingsContext.swift */; };
+		3BDCC4FA2B03C00500FBBB20 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C66D82B03BFBC00CC7A82 /* SettingsScreen.swift */; };
+		3BDCC4FB2B03C00500FBBB20 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1C66D72B03BFBC00CC7A82 /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B1C66CE2B03BDFA00CC7A82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02978AF72AEAD7F40055A60B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02978AFE2AEAD7F40055A60B;
+			remoteInfo = InjectionApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		024F86662AEAE38700F752DA /* TransactionDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsScreen.swift; sourceTree = "<group>"; };
@@ -38,7 +53,7 @@
 		024F86782AEAEDBD00F752DA /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		024F867A2AEAF31100F752DA /* LandingContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingContext.swift; sourceTree = "<group>"; };
 		024F867C2AEB0ECE00F752DA /* TransactionsContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsContext.swift; sourceTree = "<group>"; };
-		02978AFF2AEAD7F40055A60B /* InjectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InjectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02978AFF2AEAD7F40055A60B /* InjectionClasses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InjectionClasses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02978B022AEAD7F40055A60B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02978B042AEAD7F40055A60B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		02978B0B2AEAD7F50055A60B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,10 +61,23 @@
 		02978B102AEAD7F50055A60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02978B162AEAD8460055A60B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		02978B182AEAE1FD0055A60B /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		3B1C66CA2B03BDFA00CC7A82 /* InjectionClassesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InjectionClassesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B1C66CC2B03BDFA00CC7A82 /* InjectionClassesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionClassesTests.swift; sourceTree = "<group>"; };
+		3B1C66D42B03BFB200CC7A82 /* SettingsContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContext.swift; sourceTree = "<group>"; };
+		3B1C66D62B03BFBC00CC7A82 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		3B1C66D72B03BFBC00CC7A82 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		3B1C66D82B03BFBC00CC7A82 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		02978AFC2AEAD7F40055A60B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B1C66C72B03BDFA00CC7A82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,7 +113,8 @@
 		02978AF62AEAD7F40055A60B = {
 			isa = PBXGroup;
 			children = (
-				02978B012AEAD7F40055A60B /* InjectionApp */,
+				02978B012AEAD7F40055A60B /* InjectionClasses */,
+				3B1C66CB2B03BDFA00CC7A82 /* InjectionClassesTests */,
 				02978B002AEAD7F40055A60B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,12 +122,13 @@
 		02978B002AEAD7F40055A60B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02978AFF2AEAD7F40055A60B /* InjectionApp.app */,
+				02978AFF2AEAD7F40055A60B /* InjectionClasses.app */,
+				3B1C66CA2B03BDFA00CC7A82 /* InjectionClassesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		02978B012AEAD7F40055A60B /* InjectionApp */ = {
+		02978B012AEAD7F40055A60B /* InjectionClasses */ = {
 			isa = PBXGroup;
 			children = (
 				024F866D2AEAE57600F752DA /* Analytics.swift */,
@@ -111,17 +141,37 @@
 				024F86732AEAE97900F752DA /* Landing */,
 				02978B0D2AEAD7F50055A60B /* LaunchScreen.storyboard */,
 				02978B042AEAD7F40055A60B /* SceneDelegate.swift */,
+				3B1C66D32B03BFA600CC7A82 /* Settings */,
 				024F866A2AEAE47B00F752DA /* Transactions */,
 			);
-			path = InjectionApp;
+			path = InjectionClasses;
+			sourceTree = "<group>";
+		};
+		3B1C66CB2B03BDFA00CC7A82 /* InjectionClassesTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B1C66CC2B03BDFA00CC7A82 /* InjectionClassesTests.swift */,
+			);
+			path = InjectionClassesTests;
+			sourceTree = "<group>";
+		};
+		3B1C66D32B03BFA600CC7A82 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3B1C66D42B03BFB200CC7A82 /* SettingsContext.swift */,
+				3B1C66D62B03BFBC00CC7A82 /* SettingsCoordinator.swift */,
+				3B1C66D82B03BFBC00CC7A82 /* SettingsScreen.swift */,
+				3B1C66D72B03BFBC00CC7A82 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		02978AFE2AEAD7F40055A60B /* InjectionApp */ = {
+		02978AFE2AEAD7F40055A60B /* InjectionClasses */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02978B132AEAD7F50055A60B /* Build configuration list for PBXNativeTarget "InjectionApp" */;
+			buildConfigurationList = 02978B132AEAD7F50055A60B /* Build configuration list for PBXNativeTarget "InjectionClasses" */;
 			buildPhases = (
 				02978AFB2AEAD7F40055A60B /* Sources */,
 				02978AFC2AEAD7F40055A60B /* Frameworks */,
@@ -131,10 +181,28 @@
 			);
 			dependencies = (
 			);
-			name = InjectionApp;
+			name = InjectionClasses;
 			productName = InjectionApp;
-			productReference = 02978AFF2AEAD7F40055A60B /* InjectionApp.app */;
+			productReference = 02978AFF2AEAD7F40055A60B /* InjectionClasses.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3B1C66C92B03BDFA00CC7A82 /* InjectionClassesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B1C66D02B03BDFA00CC7A82 /* Build configuration list for PBXNativeTarget "InjectionClassesTests" */;
+			buildPhases = (
+				3B1C66C62B03BDFA00CC7A82 /* Sources */,
+				3B1C66C72B03BDFA00CC7A82 /* Frameworks */,
+				3B1C66C82B03BDFA00CC7A82 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B1C66CF2B03BDFA00CC7A82 /* PBXTargetDependency */,
+			);
+			name = InjectionClassesTests;
+			productName = InjectionAppTests;
+			productReference = 3B1C66CA2B03BDFA00CC7A82 /* InjectionClassesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -149,9 +217,13 @@
 					02978AFE2AEAD7F40055A60B = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					3B1C66C92B03BDFA00CC7A82 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 02978AFE2AEAD7F40055A60B;
+					};
 				};
 			};
-			buildConfigurationList = 02978AFA2AEAD7F40055A60B /* Build configuration list for PBXProject "InjectionApp" */;
+			buildConfigurationList = 02978AFA2AEAD7F40055A60B /* Build configuration list for PBXProject "InjectionClasses" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,7 +236,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				02978AFE2AEAD7F40055A60B /* InjectionApp */,
+				02978AFE2AEAD7F40055A60B /* InjectionClasses */,
+				3B1C66C92B03BDFA00CC7A82 /* InjectionClassesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -176,6 +249,13 @@
 			files = (
 				02978B0F2AEAD7F50055A60B /* LaunchScreen.storyboard in Resources */,
 				02978B0C2AEAD7F50055A60B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B1C66C82B03BDFA00CC7A82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +271,16 @@
 				024F867D2AEB0ECE00F752DA /* TransactionsContext.swift in Sources */,
 				02978B172AEAD8460055A60B /* AppCoordinator.swift in Sources */,
 				02978B192AEAE1FD0055A60B /* AppContext.swift in Sources */,
+				3BDCC4FB2B03C00500FBBB20 /* SettingsViewModel.swift in Sources */,
 				024F86692AEAE3D700F752DA /* TransactionDetailsViewModel.swift in Sources */,
 				02978B032AEAD7F40055A60B /* AppDelegate.swift in Sources */,
 				02978B052AEAD7F40055A60B /* SceneDelegate.swift in Sources */,
+				3BDCC4F92B03C00500FBBB20 /* SettingsContext.swift in Sources */,
 				024F86722AEAE5B500F752DA /* TransactionsCoordinator.swift in Sources */,
+				3BDCC4FA2B03C00500FBBB20 /* SettingsScreen.swift in Sources */,
 				024F86702AEAE58900F752DA /* FlagManager.swift in Sources */,
 				024F86672AEAE38700F752DA /* TransactionDetailsScreen.swift in Sources */,
+				3BDCC4F62B03C00000FBBB20 /* SettingsCoordinator.swift in Sources */,
 				024F867B2AEAF31100F752DA /* LandingContext.swift in Sources */,
 				024F866E2AEAE57600F752DA /* Analytics.swift in Sources */,
 				024F86792AEAEDBD00F752DA /* LandingViewModel.swift in Sources */,
@@ -204,7 +288,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3B1C66C62B03BDFA00CC7A82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B1C66CD2B03BDFA00CC7A82 /* InjectionClassesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B1C66CF2B03BDFA00CC7A82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02978AFE2AEAD7F40055A60B /* InjectionClasses */;
+			targetProxy = 3B1C66CE2B03BDFA00CC7A82 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		02978B0D2AEAD7F50055A60B /* LaunchScreen.storyboard */ = {
@@ -346,7 +446,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 576W44C4E4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = InjectionApp/Info.plist;
+				INFOPLIST_FILE = InjectionClasses/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -374,7 +474,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 576W44C4E4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = InjectionApp/Info.plist;
+				INFOPLIST_FILE = InjectionClasses/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -393,10 +493,44 @@
 			};
 			name = Release;
 		};
+		3B1C66D12B03BDFA00CC7A82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m1.InjectionAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InjectionClasses.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InjectionClasses";
+			};
+			name = Debug;
+		};
+		3B1C66D22B03BDFA00CC7A82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.m1.InjectionAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InjectionClasses.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InjectionClasses";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02978AFA2AEAD7F40055A60B /* Build configuration list for PBXProject "InjectionApp" */ = {
+		02978AFA2AEAD7F40055A60B /* Build configuration list for PBXProject "InjectionClasses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02978B112AEAD7F50055A60B /* Debug */,
@@ -405,11 +539,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02978B132AEAD7F50055A60B /* Build configuration list for PBXNativeTarget "InjectionApp" */ = {
+		02978B132AEAD7F50055A60B /* Build configuration list for PBXNativeTarget "InjectionClasses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02978B142AEAD7F50055A60B /* Debug */,
 				02978B152AEAD7F50055A60B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B1C66D02B03BDFA00CC7A82 /* Build configuration list for PBXNativeTarget "InjectionClassesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B1C66D12B03BDFA00CC7A82 /* Debug */,
+				3B1C66D22B03BDFA00CC7A82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -33,7 +33,7 @@ final class AppCoordinator: Coordinator {
 
     init(
         context: AppContext,
-        navigationController: UINavigationController
+        navigationController: UINavigationController?
     ) {
         self.context = context
         self.navigationController = navigationController

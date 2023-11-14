@@ -11,12 +11,12 @@ import UIKit
 final class TransactionsCoordinator: Coordinator {
     var navigationController: UINavigationController?
 
-    let context: TransactionsDependency
+    let context: TransactionsContext
 
     // This doesn't need to do anything since this doesn't start children right now
     let coordinators: [Coordinator] = []
 
-    init(context: TransactionsDependency, navigationController: UINavigationController?) {
+    init(context: TransactionsContext, navigationController: UINavigationController?) {
         self.context = context
         self.navigationController = navigationController
     }
